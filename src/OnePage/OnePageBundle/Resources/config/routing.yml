@@ -1,0 +1,3 @@
+one_page_homepage:
+    path:     /
+    defaults: { _controller: OnePageBundle:Default:index }

@@ -1,0 +1,116 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+{% include '::modules/header.html.twig' %}
+
+<div class="mdl-grid encart-header">
+
+    {% for card in cards %}
+    <div class="mdl-cell mdl-cell--3-col mdl-card mdl-shadow--2dp">
+        <img src="{{ asset(card.img) }}" />
+        <div class="mdl-card__supporting-text">
+            <h2>{{ card.title }}</h2>
+            <h4>{{ card.subtitle }}</h4>
+        </div>
+        <div class="mdl-card__supporting-text">{{ card.text }}</div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<div class="mobycity-title" id="concept">
+    <h1>Comment</h1>
+    <h2>ça marche ?</h2>
+</div>
+<div class="mdl-grid encart-concept">
+    {% for card in cards %}
+        <div class="mdl-cell mdl-cell--4-col mdl-shadow--2dp">
+            <img src="{{ asset(card.photo) }}" alt="{{ card.subtitle }}"/>
+            <h2>{{ card.title_photo }}</h2>
+            {% include card.svg %}
+            <h3>{{ card.subtitle_photo }}</h3>
+        </div>
+    {% endfor %}
+</div>
+
+<div class="mobycity-title" id="equipe">
+    <h1>Qui</h1>
+    <h2>sommes nous ?</h2>
+</div>
+<div class="mdl-grid encart-equipe">
+    {% for user in users %}
+    <div class="mdl-cell mdl-card mdl-cell--3-col">
+        <div class="thumbnail">
+            <img src="{{ asset('img/accueil-slider.jpg') }}" alt="">
+        </div>
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.describe }}</p>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mobycity-title" id="histoire">
+    <h1>L'histoire</h1>
+    <h2>de Mobycity</h2>
+</div>
+<div class="mdl-grid encart-histoire">
+    {% include '::icones/lancement.svg.twig' %}
+    {% include '::icones/discution.svg.twig' %}
+    {% include '::icones/plan-action.svg.twig' %}
+    {% include '::icones/creation.svg.twig' %}
+</div>
+
+<div class="mobycity-title" id="contact">
+    <h1>Nous</h1>
+    <h2>Contacter</h2>
+</div>
+
+<form action="#" class="form-mobycity">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="fname">
+    <label class="mdl-textfield__label" for="fname">Nom...</label>
+  </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="email" id="email">
+    <label class="mdl-textfield__label" for="email">Email...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="phone">
+    <label class="mdl-textfield__label" for="phone">Téléphone...</label>
+    <span class="mdl-textfield__error">Input is not a number!</span>
+  </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="sujet">
+    <label class="mdl-textfield__label" for="sujet">Sujet...</label>
+  </div>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <textarea class="mdl-textfield__input" rows="5" id="textcontent"></textarea>
+    <label class="mdl-textfield__label" for="textcontent">Ecrivez nous...</label>
+  </div>
+  <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+    <i class="material-icons">mail outline</i>
+  </button>
+</form>
+<section class="social-block-mobycity">
+    <h2>Rejoignez nous sur les réseaux sociaux</h2>
+        {% for social in sociaux %}
+            <a target="_blank" href="{{ social.url }}">
+                {% include social.icone %}
+            </a>
+        {% endfor %}
+</section>
+
+<div class="mobycity-title" id="partenaire">
+    <h1>Nos</h1>
+    <h2>Partenaires</h2>
+</div>
+
+<div class="mdl-grid encart-partenaire">
+    {% for partenaire in partenaires %}
+
+        <img src="{{ asset(partenaire.img) }}" alt=""/>
+
+    {% endfor %}
+</div>
+
+{% include '::modules/footer.html.twig' %}
+{% endblock %}

@@ -1,0 +1,14 @@
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Mobycity</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#contact">Nous contacter</a></li>
+                        {% for social in sociaux %}
+                            <a target="_blank" href="{{ social.url }}">{% include social.icone %}</a>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </main>
+</div>

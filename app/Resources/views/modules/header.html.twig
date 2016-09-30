@@ -1,0 +1,28 @@
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mobycity-custom mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">{% include '::icones/logoComplet.svg.twig' %}</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        {% include '::icones/logoComplet.svg.twig' %}
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#home"><i class="material-icons mdl-list__item-icon">home</i> Accueil</a>
+            <a class="mdl-navigation__link" href="#concept"><i class="material-icons mdl-list__item-icon">phonelink setup</i> Concept</a>
+            <a class="mdl-navigation__link" href="#equipe"><i class="material-icons mdl-list__item-icon">person</i> Qui sommes nous ?</a>
+            <a class="mdl-navigation__link" href="#histoire"><i class="material-icons mdl-list__item-icon">history</i> Historique</a>
+            <a class="mdl-navigation__link" href="#contact"><i class="material-icons mdl-list__item-icon">mail outline</i> Nous contacter</a>
+            <a class="mdl-navigation__link" href="#partenaire"><i class="material-icons mdl-list__item-icon">people</i> Nos partenaires</a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div class="page-content">
+            <!-- Your content goes here -->
+            <div class="thumbnail header-mobicity" id="home">
+                <img src="{{ asset('img/accueil-slider.jpg') }}" alt="" />
+                {% include '::icones/logo.svg.twig' %}
+            </div>
