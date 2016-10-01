@@ -10,13 +10,6 @@ framework:
 web_profiler:
     toolbar: true
     intercept_redirects: false
-    
-swiftmailer:
-    encryption: ssl
-    host: smtp.gmail.com
-    transport: gmail
-    username:  starter.mobycity@gmail.com
-    password:  playstation3!
 
 monolog:
     handlers:
